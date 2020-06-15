@@ -1,0 +1,73 @@
+.header {
+    margin: auto;
+    display: flex;
+    justify-content: center;
+}
+
+.header-info {
+    font-size: 1.2em;
+    margin: 0;
+    margin-right: 0.4rem;
+}
+
+.header-title {
+    font-size: 1.2em;
+}
+
+.input-v1 {
+    border: 0.1em solid #cccccc;
+    border-radius: 0.4em;
+    -webkit-border-radius: 0.4em;
+    -moz-border-radius: 0.4em;
+    -khtml-border-radius: 0.4em;
+    background: #ffffff !important;
+    outline: none;
+    margin-left: 1em;
+}
+
+.button-v1 {
+    border: 0;
+    text-decoration: none;
+    outline: none;
+    color: white;
+    padding: 0.4em 0.8em;
+    margin-left: 1em;
+    border-radius: 1em;
+    border-color: whitesmoke;
+    background-image: linear-gradient(to right, #dae2ea 0%, #5b88bd 51%, #e5ebf1 100%);
+    background-size: 200% auto;
+    box-shadow: 0 0 1em rgba(0,0,0,.1);
+    transition: .5s;
+}
+
+.button-v1:hover {background-position: right center;}
+
+.route-add-form {
+    width: 16em;
+}
+
+.route-span {
+    margin-left: 2.64em;
+}
+
+.route-add-button {
+    margin-left: 8.8em;
+    margin-top: 0.4em;
+}
+
+.footer-block {
+    display: flex;
+    flex-direction: row;
+}
+
+.block-info {
+    font-size: 1em;
+    margin: 0;
+    margin-right: 0.4rem;
+    margin-bottom: 0.4rem;
+    text-align: left;
+}
+
+.footer-block-child {
+    margin: 2em;
+}

@@ -10,16 +10,19 @@ class TreeHelper {
     }
 
     findParentNode(route) {
-        const normalizedRoute = route.substr(1);
-        const chunks = normalizedRoute.split('/');
-        const parentChunks = chunks.slice(0, -1);
-        const parentRoute = `/${parentChunks.join('/')}`;
-
+        const parentRoute = TreeHelper.getParentRoute(route);
         return this.findNode(parentRoute);
     }
 
     flatten() {
         return TreeHelper.flatten(this._tree);
+    }
+
+    static getParentRoute(route) {
+        const normalizedRoute = route.substr(1);
+        const chunks = normalizedRoute.split('/');
+        const parentChunks = chunks.slice(0, -1);
+        return `/${parentChunks.join('/')}`;
     }
 
     static flatten(tree) {
@@ -28,17 +31,6 @@ class TreeHelper {
             .flat();
 
         return [tree, ...childNodes];
-    }
-
-    static _addParent(nodes, parent) {
-        return nodes.map((node) => ({
-            ...node,
-            parent
-        }));
-    }
-
-    static findChildNode(node, routeChunk) {
-        return node.nodes.find(({route}) => route === `/${routeChunk}`);
     }
 }
 

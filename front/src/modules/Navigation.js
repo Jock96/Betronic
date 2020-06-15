@@ -9,7 +9,7 @@ import {
     Route,
     Redirect
   } from 'react-router-dom';
-import TreeNodePage from '../components/TreeNodePage';
+import TreeNodePage from '../components/TreeNodePage/TreeNodePage';
 
 const Navigation = ({
     tree,

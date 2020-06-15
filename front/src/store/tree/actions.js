@@ -16,8 +16,6 @@ export const addRoute = (title, route, fullParentRoute) => (dispatch, getState) 
         throw new Error('This node is already exists');
     }
 
-    // TODO проверить, что дочерних узлов не больше 2
-
     const childNode = {
         route,
         title,
