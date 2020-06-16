@@ -43,7 +43,7 @@ const TreeNodePage = ({
                 <AddRouteForm onAddNode={onAddNode} />
                 <LinksForm node={node} removeRoute={removeRoute} />
               </div>
-              <RouteTablecComponent flattenTree={flattenTree} removeRoute={removeRoute} />
+              <RouteTablecComponent flattenTree={flattenTree}/>
             </div>
         </div>
     );

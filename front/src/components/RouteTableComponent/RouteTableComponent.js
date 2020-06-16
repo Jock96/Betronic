@@ -19,9 +19,9 @@ const RouteTablecComponent = ({ flattenTree, removeRoute }) => {
                 </div>
                 {flattenTree.map(({ route, title, nodes }) => (
                 <div className='route-table-row'>
-                    <div className='route-table-cell'>{route}</div>
-                    <div className='route-table-cell'>{title}</div>
-                    <div className='route-table-cell'>{nodes.length}</div>
+                    <div className='route-table-cell route-cell'>{route}</div>
+                    <div className='route-table-cell titel-cell'>{title}</div>
+                    <div className='route-table-cell count-cell'>{nodes.length}</div>
                     {route !== initialState.route && 
                     <button className='button-v1 table-button' onClick={() => onNodeDeleteFromTable(route)}>
                         {Constants.remove}

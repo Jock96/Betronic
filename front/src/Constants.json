@@ -11,5 +11,6 @@
     "tableRoute": "Роут",
     "tableTitle": "Название",
     "tableCount": "Количество дочерних узлов",
-    "tableDelete": "Удаление"
+    "tableDelete": "Удаление",
+    "inputMaxValue": 250
 }

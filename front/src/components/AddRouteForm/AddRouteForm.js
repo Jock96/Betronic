@@ -10,7 +10,11 @@ const AddRouteForm = ({ onAddNode }) => {
     const [fieldsState, setFieldsState] = React.useState(fieldsDefaultState);
 
     const onTitleChanged = React.useCallback((e) => {
-      const { value } = e.target;
+      let { value } = e.target;
+
+      if (value.length > Constants.inputMaxValue) {
+        value = e.target.value.slice(0, Constants.inputMaxValue);
+      }
   
       setFieldsState(state => ({
         ...state,
@@ -19,10 +23,14 @@ const AddRouteForm = ({ onAddNode }) => {
     }, []);
   
     const onRouteChanged = React.useCallback((e) => {
-      const { value } = e.target;
+      let { value } = e.target;
 
       if (value.endsWith('/') || value.endsWith('\\'))
         return;
+
+      if (value.length > Constants.inputMaxValue) {
+        value = e.target.value.slice(0, Constants.inputMaxValue);
+      }
   
       setFieldsState(state => ({
         ...state,
@@ -49,7 +57,7 @@ const AddRouteForm = ({ onAddNode }) => {
                 </div>
                 <button 
                   className='button-v1 route-add-button' 
-                  disabled={fieldsState.route.trim() === '/'}
+                  disabled={fieldsState.route.trim() === '/' || !fieldsState.title.length}
                   onClick={nodeAddHandler}>
                     {Constants.addRoute}
                 </button>
