@@ -6,5 +6,10 @@
     "goToParent": "⇐ Перейти к родителю",
     "remove": "Удалить",
     "links": "Ссылки",
-    "routeAddForm": "Добавление роутов"
+    "routeAddForm": "Добавление роутов",
+    "table": "Таблица",
+    "tableRoute": "Роут",
+    "tableTitle": "Название",
+    "tableCount": "Количество дочерних узлов",
+    "tableDelete": "Удаление"
 }

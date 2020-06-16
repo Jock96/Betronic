@@ -6,11 +6,13 @@ import initialState from '../../store/tree/initialState';
 import AddRouteForm from '../AddRouteForm/AddRouteForm';
 import TreeHelper from '../../helpers/TreeHelper';
 import LinksForm from '../LinksForm/LinksForm';
+import RouteTablecComponent from '../RouteTableComponent/RouteTableComponent';
 
 const TreeNodePage = ({
     node,
     addRoute,
-    removeRoute
+    removeRoute,
+    flattenTree
 }) => {
     const onAddNode = React.useCallback((title, route) => {
       addRoute(title, `${node.route}${route}`, node.route);
@@ -36,9 +38,12 @@ const TreeNodePage = ({
                 </button>
               )}
             </div>
-            <div className="footer-block">
-              <AddRouteForm onAddNode={onAddNode} />
-              <LinksForm node={node} removeRoute={removeRoute} />
+            <div className='body-block'>
+              <div className='func-block'>
+                <AddRouteForm onAddNode={onAddNode} />
+                <LinksForm node={node} removeRoute={removeRoute} />
+              </div>
+              <RouteTablecComponent flattenTree={flattenTree} removeRoute={removeRoute} />
             </div>
         </div>
     );

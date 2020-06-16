@@ -4,7 +4,7 @@ import Constants from '../../Constants.json';
 
 const LinksForm = ({ node, removeRoute }) => {
     return (
-        <div className="footer-block-child">
+        <div className="func-block-child">
             <h2 className="block-info">{Constants.links}</h2>
             {
                 node.nodes.map((childNode) => (

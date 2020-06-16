@@ -20,6 +20,9 @@ const AddRouteForm = ({ onAddNode }) => {
   
     const onRouteChanged = React.useCallback((e) => {
       const { value } = e.target;
+
+      if (value.endsWith('/') || value.endsWith('\\'))
+        return;
   
       setFieldsState(state => ({
         ...state,
@@ -33,7 +36,7 @@ const AddRouteForm = ({ onAddNode }) => {
     }, [fieldsState.route, fieldsState.title, onAddNode]);
 
     return(
-        <div className="footer-block-child">
+        <div className="func-block-child">
             <h2 className="block-info">{Constants.routeAddForm}</h2>
             <div className="route-add-from">
                 <div>
@@ -44,7 +47,12 @@ const AddRouteForm = ({ onAddNode }) => {
                     <span className='route-span'>{Constants.route}</span>
                     <input className='input-v1' onChange={onRouteChanged} value={fieldsState.route} />
                 </div>
-                <button className='button-v1 route-add-button' onClick={nodeAddHandler}>{Constants.addRoute}</button>
+                <button 
+                  className='button-v1 route-add-button' 
+                  disabled={fieldsState.route.trim() === '/'}
+                  onClick={nodeAddHandler}>
+                    {Constants.addRoute}
+                </button>
             </div>
         </div>
     );

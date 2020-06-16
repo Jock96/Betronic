@@ -27,7 +27,7 @@ const Navigation = ({
                 {
                     flattenTree.map(node => (
                         <Route exact key={node.route} path={node.route}>
-                            <TreeNodePage node={node} removeRoute={removeRoute} addRoute={addRoute} />
+                            <TreeNodePage node={node} removeRoute={removeRoute} addRoute={addRoute} flattenTree={flattenTree} />
                         </Route>
                     ))
                 }

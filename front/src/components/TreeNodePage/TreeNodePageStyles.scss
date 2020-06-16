@@ -55,7 +55,7 @@
     margin-top: 0.4em;
 }
 
-.footer-block {
+.func-block {
     display: flex;
     flex-direction: row;
 }
@@ -68,6 +68,37 @@
     text-align: left;
 }
 
-.footer-block-child {
-    margin: 2em;
+.func-block-child {
+    margin-right: 2em;
+    margin-top: 1em;
+}
+
+.body-block {
+    margin: 1em;
+}
+
+.route-table {
+    display: grid;
+}
+
+.route-table-header {
+    display: inherit;
+    grid-template-columns: repeat(4, 1fr);
+    border-bottom-style: inset;
+    margin-bottom: 1em;
+    padding-bottom: 0.4em;
+}
+
+.route-table-row {
+    display: inherit;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.route-table-cell {
+    margin: auto;
+    margin-top: 1em;
+}
+
+.table-button {
+    margin: auto;
 }
