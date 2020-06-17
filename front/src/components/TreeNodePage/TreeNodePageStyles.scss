@@ -1,3 +1,5 @@
+@import "../../Theme.scss";
+
 %header {
     margin: auto;
     display: flex;
@@ -9,29 +11,29 @@
 
 .header-vk {
     @extend %header;
-    background-color: #5b88bd;
+    background-color: $vk_main_color;
 }
 
 .header-wa {
     @extend %header;
-    background-color: #1ebea5;
+    background-color: $wa_main_color;
 }
 
 .header-gl {
     @extend %header;
-    background-color: #292961;
+    background-color: $gl_main_color;
 }
 
 .header-info {
     font-size: 1.2em;
     margin: 0;
     margin-right: 0.4rem;
-    color: #fff;
+    color: white;
 }
 
 .header-title {
     font-size: 1.2em;
-    color: #fff;
+    color: white;
 }
 
 %button-v1 {
@@ -51,21 +53,21 @@
 
 .button-v1-vk {
     @extend %button-v1;
-    background-image: linear-gradient(to right, #dae2ea 0%, #5b88bd 51%, #e5ebf1 100%);
+    background-image: linear-gradient(to right, #dae2ea 0%, $vk_main_color 51%, $vk_accent_color 100%);
 }
 
 .button-v1-vk:hover {background-position: right center;}
 
 .button-v1-wa {
     @extend %button-v1;
-    background-image: linear-gradient(to right, #dae2ea 0%, #064e45 51%, #00e676 100%);
+    background-image: linear-gradient(to right, #dae2ea 0%, $wa_color_first 51%, $wa_color_second 100%);
 }
 
 .button-v1-wa:hover {background-position: right center;}
 
 .button-v1-gl {
     @extend %button-v1;
-    background-image: linear-gradient(to right, black 0%, #1b69b6 51%, #1f78d1 100%);
+    background-image: linear-gradient(to right, black 0%, $gl_color_first 51%, $gl_color_second 100%);
 }
 
 .button-v1-gl:hover {background-position: right center;}
@@ -80,13 +82,32 @@
     margin-bottom: 1em;
 }
 
+.header-button {
+    @media (max-width: 1430px) {
+        border-radius: 1em;
+        padding: 0.2em 1em;
+        margin-left: 2em;
+    }
+    @media (max-width: 600px) {
+        border-radius: 1em;
+        padding: 0.01em 0.8em;
+        margin-left: 1em;
+    }
+    @media (max-width: 600px) {
+        border-radius: 1em;
+        padding: 0.01em 0.6em;
+        height: 70%;
+        margin-left: 0.4em;
+    }
+}
+
 %block-info {
     font-size: 1em;
     margin: 0;
     margin-right: 0.4rem;
     margin-bottom: 0.4rem;
     text-align: left;
-    color: #fff;
+    color: white;
     border-radius: 0.4em;
     height: 2em;
     display: flex;
@@ -97,17 +118,17 @@
 
 .block-info-vk {
     @extend %block-info;
-    background-color: #5b88bd;
+    background-color: $vk_main_color;
 }
 
 .block-info-wa {
     @extend %block-info;
-    background-color: #1ebea5;
+    background-color: $wa_main_color;
 }
 
 .block-info-gl {
     @extend %block-info;
-    background-color: #292961;
+    background-color: $gl_main_color;
 }
 
 .func-block-child {

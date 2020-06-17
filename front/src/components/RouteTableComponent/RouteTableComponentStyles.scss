@@ -1,3 +1,5 @@
+@import "../../Theme.scss";
+
 %route-table {
     display: grid;
     border-width: medium;
@@ -8,17 +10,17 @@
 
 .route-table-vk {
     @extend %route-table;
-    border-color: #5b88bd;;
+    border-color: $vk_main_color;
 }
 
 .route-table-wa {
     @extend %route-table;
-    border-color: #1ebea5;
+    border-color: $wa_main_color;
 }
 
 .route-table-gl {
     @extend %route-table;
-    border-color: #292961;
+    border-color: $gl_main_color;
 }
 
 %route-table-header {
@@ -31,17 +33,17 @@
 
 .route-table-header-vk {
     @extend %route-table-header;
-    border-color: #5b88bd;
+    border-color: $vk_main_color;
 }
 
 .route-table-header-wa {
     @extend %route-table-header;
-    border-color: #1ebea5;
+    border-color: $wa_main_color;
 }
 
 .route-table-header-gl {
     @extend %route-table-header;
-    border-color: #292961;
+    border-color: $gl_main_color;
 }
 
 .route-table-row {
@@ -61,11 +63,27 @@
 .route-cell {
     max-width: 24em;
     overflow-wrap: break-word;
+    
+    @media (max-width: 1430px) {
+        max-width: 11em;
+    }
+
+    @media (max-width: 768px) {
+        max-width: 8em;
+    }
 }
 
 .titel-cell {
     max-width: 14em;
     overflow-wrap: break-word;
+
+    @media (max-width: 1430px) {
+        max-width: 8em;
+    }
+
+    @media (max-width: 768px) {
+        max-width: 6em;
+    }
 }
 
 .count-cell {

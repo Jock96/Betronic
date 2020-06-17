@@ -4,7 +4,7 @@ import persistState from 'redux-localstorage';
 import treeReducer from './tree/reducer';
 
 const createRootReducer = () => combineReducers({
-    tree: treeReducer
+    tree: treeReducer,
 });
 
 const configureStore = () => {

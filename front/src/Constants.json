@@ -14,5 +14,6 @@
     "tableDelete": "Удаление",
     "inputMaxValue": 250,
     "addAdaptiveText": "+",
-    "removeAdaptiveText": "-"
+    "removeAdaptiveText": "-",
+    "goToParentAdaptiveText": "⇐"
 }

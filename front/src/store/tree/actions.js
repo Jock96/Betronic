@@ -7,13 +7,15 @@ export const addRoute = (title, route, fullParentRoute) => (dispatch, getState) 
     const parentNode = treeHelper.findNode(fullParentRoute);
 
     if (!parentNode) {
-        throw new Error('Parent node was not found');
+        console.log('Parent node was not found');
+        return;
     }
 
     const hasNodeWithSameRoute = parentNode.nodes.some(({route: childRoute}) => childRoute === route);
     
     if (hasNodeWithSameRoute) {
-        throw new Error('This node is already exists');
+        console.log('This node is already exists');
+        return;
     }
 
     const childNode = {
