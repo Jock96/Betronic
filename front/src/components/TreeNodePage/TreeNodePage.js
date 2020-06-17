@@ -7,6 +7,7 @@ import AddRouteForm from '../AddRouteForm/AddRouteForm';
 import TreeHelper from '../../helpers/TreeHelper';
 import LinksForm from '../LinksForm/LinksForm';
 import RouteTablecComponent from '../RouteTableComponent/RouteTableComponent';
+import clsx from 'clsx';
 
 const TreeNodePage = ({
     node,
@@ -27,23 +28,27 @@ const TreeNodePage = ({
       history.push(parentRoute);
     }, [history, node.route]);
 
+    const isVk = node.nodes.length === 0;
+    const isWa = node.nodes.length === 1;
+    const isGl = node.nodes.length >= 2;
+
     return (
         <div>
-            <div className='header'>
+            <div className={clsx({'header-vk': isVk, 'header-wa': isWa, 'header-gl': isGl})}>
               <h1 className='header-info'>{Constants.nodeName}</h1>
               <div className='header-title'>{node.title}</div>
               {!isRoot && (
-                <button className='button-v1' onClick={onGoToParent}>
+                <button className={clsx({'button-v1-vk': isVk, 'button-v1-wa': isWa, 'button-v1-gl': isGl})} onClick={onGoToParent}>
                   {Constants.goToParent}
                 </button>
               )}
             </div>
             <div className='body-block'>
               <div className='func-block'>
-                <AddRouteForm onAddNode={onAddNode} />
-                <LinksForm node={node} removeRoute={removeRoute} />
+                <AddRouteForm onAddNode={onAddNode} isVk={isVk} isGl={isGl} isWa={isWa} />
+                <LinksForm node={node} removeRoute={removeRoute} isVk={isVk} isGl={isGl} isWa={isWa} />
               </div>
-              <RouteTablecComponent flattenTree={flattenTree}/>
+              <RouteTablecComponent flattenTree={flattenTree} removeRoute={removeRoute} isVk={isVk} isGl={isGl} isWa={isWa} />
             </div>
         </div>
     );

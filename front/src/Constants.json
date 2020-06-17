@@ -12,5 +12,7 @@
     "tableTitle": "Название",
     "tableCount": "Количество дочерних узлов",
     "tableDelete": "Удаление",
-    "inputMaxValue": 250
+    "inputMaxValue": 250,
+    "addAdaptiveText": "+",
+    "removeAdaptiveText": "-"
 }

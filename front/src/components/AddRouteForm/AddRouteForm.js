@@ -1,13 +1,17 @@
 import React, { useCallback } from 'react';
 import Constants from '../../Constants.json';
+import './AddRouteFromStyles.scss'
+import clsx from 'clsx';
+import { useMedia } from 'react-media';
 
 const fieldsDefaultState = {
     route: '/',
     title: ''
   };
 
-const AddRouteForm = ({ onAddNode }) => {
+const AddRouteForm = ({ onAddNode, isVk, isWa, isGl }) => {
     const [fieldsState, setFieldsState] = React.useState(fieldsDefaultState);
+    const isDesktop = useMedia({ query: "(min-width: 1430px)"});
 
     const onTitleChanged = React.useCallback((e) => {
       let { value } = e.target;
@@ -45,8 +49,8 @@ const AddRouteForm = ({ onAddNode }) => {
 
     return(
         <div className="func-block-child">
-            <h2 className="block-info">{Constants.routeAddForm}</h2>
-            <div className="route-add-from">
+            <h2 className={clsx({'block-info-vk': isVk, 'block-info-wa': isWa, 'block-info-gl': isGl})}>{Constants.routeAddForm}</h2>
+            <div className="route-add-form">
                 <div>
                     <span>{Constants.title}</span>
                     <input className="input-v1" onChange={onTitleChanged} value={fieldsState.title} />
@@ -56,10 +60,10 @@ const AddRouteForm = ({ onAddNode }) => {
                     <input className='input-v1' onChange={onRouteChanged} value={fieldsState.route} />
                 </div>
                 <button 
-                  className='button-v1 route-add-button' 
+                  className={`${clsx({'button-v1-vk': isVk, 'button-v1-wa': isWa, 'button-v1-gl': isGl})} route-add-button`}
                   disabled={fieldsState.route.trim() === '/' || !fieldsState.title.length}
                   onClick={nodeAddHandler}>
-                    {Constants.addRoute}
+                    {isDesktop ? (Constants.addRoute) : (Constants.addAdaptiveText)}
                 </button>
             </div>
         </div>

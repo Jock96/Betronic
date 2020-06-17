@@ -1,0 +1,42 @@
+.input-v1 {
+    border: 0.1em solid #cccccc;
+    border-radius: 0.4em;
+    -webkit-border-radius: 0.4em;
+    -moz-border-radius: 0.4em;
+    -khtml-border-radius: 0.4em;
+    background: #ffffff !important;
+    outline: none;
+    margin-left: 1em;
+    width: 100%;
+    padding: 0.2em;
+    max-width: 12em;
+    @media (max-width: 856px) {
+        max-width: 10em;
+    }
+    @media (max-width: 608px) {
+        max-width: 8em;
+        height: 0.8em;
+    }
+    @media (max-width: 405px) {
+        max-width: 7em;
+        height: 0.8em;
+    }
+}
+
+.route-add-form {
+    width: 16em;
+}
+
+.route-span {
+    margin-left: 2.64em;
+}
+
+.route-add-button {
+    margin-left: 8.8em;
+    margin-top: 0.4em;
+    @media (max-width: 1430px) {
+        border-radius: 1em;
+        padding: 0.2em 0.6em;
+        margin-left: 0;
+    }
+}
