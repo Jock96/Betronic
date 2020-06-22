@@ -25,6 +25,21 @@ class TreeHelper {
         return `/${parentChunks.join('/')}`;
     }
 
+    static getRouteMask(parentRoute, currentRoute) {
+        const firstNodeWithoutCurrent = currentRoute.replace(parentRoute, '');
+        const indexOfMaskEnd  = firstNodeWithoutCurrent.indexOf('/', 1);
+        return indexOfMaskEnd === -1 ? firstNodeWithoutCurrent.slice(0) : firstNodeWithoutCurrent.slice(0, indexOfMaskEnd);
+    }
+
+    static replaceRouteByMask(mask, node) {
+        if (node.nodes.length) {
+            debugger;
+            node.nodes.forEach((innerNode) => TreeHelper.replaceRouteByMask(mask, innerNode));
+        }
+
+        node.route = node.route.replace(mask, '');
+    }
+
     static flatten(tree) {
         const childNodes = tree.nodes
             .map(node => TreeHelper.flatten(node))

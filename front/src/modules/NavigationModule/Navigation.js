@@ -1,16 +1,16 @@
 import React from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import * as actions from '../store/tree/actions';
-import TreeHelper from '../helpers/TreeHelper';
+import * as actions from './redux/actions';
+import TreeHelper from '../../helpers/TreeHelper';
 import {
     BrowserRouter as Router,
     Switch,
     Route,
     Redirect
   } from 'react-router-dom';
-import TreeNodePage from '../components/TreeNodePage/TreeNodePage';
-import RouteTableComponent from '../components/RouteTableComponent/RouteTableComponent';
+import TreeNodePage from '../../components/TreeNodePage/TreeNodePage';
+import RouteTableComponent from '../../components/RouteTableComponent/RouteTableComponent';
 
 const Navigation = ({
     tree,

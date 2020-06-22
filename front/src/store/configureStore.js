@@ -1,7 +1,7 @@
 import { createStore, applyMiddleware, combineReducers, compose } from 'redux';
 import thunk from 'redux-thunk'
 import persistState from 'redux-localstorage';
-import treeReducer from './tree/reducer';
+import treeReducer from '../modules/NavigationModule/redux/reducer';
 
 const createRootReducer = () => combineReducers({
     tree: treeReducer,

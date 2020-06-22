@@ -1,5 +1,5 @@
-import * as types from './types';
-import initialState from './initialState';
+import * as types from '../../../store/tree/types';
+import initialState from '../../../store/tree/initialState';
 
 const reducer = (state = initialState, action) => {
     const { type, payload } = action;
