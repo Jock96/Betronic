@@ -1,4 +1,4 @@
-import * as types from '../../../store/tree/types';
+import * as types from '../../../store/types';
 import TreeHelper from '../../../helpers/TreeHelper';
 
 export const addRoute = (title, route, fullParentRoute) => (dispatch, getState) => {

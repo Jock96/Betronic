@@ -2,7 +2,7 @@ import React from 'react';
 import { useHistory } from 'react-router-dom';
 import './TreeNodePageStyles.scss';
 import Constants from '../../Constants.json';
-import initialState from '../../store/tree/initialState';
+import initialState from '../../modules/NavigationModule/redux/initialState';
 import AddRouteForm from '../AddRouteForm/AddRouteForm';
 import TreeHelper from '../../helpers/TreeHelper';
 import LinksForm from '../LinksForm/LinksForm';

@@ -1,6 +1,6 @@
 import React from 'react';
 import Constants from '../../Constants.json';
-import initialState from '../../store/tree/initialState';
+import initialState from '../../modules/NavigationModule/redux/initialState';
 import './RouteTableComponentStyles.scss';
 import { useMedia } from 'react-media';
 import clsx from 'clsx';
